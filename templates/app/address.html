@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Address{% endblock title %}
+
+{% block body_block %}
+
+<div class="container">
+    <h1>Your Address</h1>
+    <h5>You can add more in profile section: <a href="{% url 'user_profile' %}" class="btn btn-primary">Add Address</a>
+    </h5>
+</div>
+<div class="col-sm-9 offset-sm-1">
+    <div class="row">
+        {% for ad in add %}
+        <div class="col-sm-6">
+            <div class="card" id="address">
+                <div class="card-body">
+                    <h3>Address {{forloop.counter}}</h3>
+                    <p>Name: {{ad.name}}</p>
+                    <p>Phone: {{phone_number}}</p>
+                    <p>House Number/Flat number: {{ad.house_number}}</p>
+                    <p>Locality: {{ad.locality}}</p>
+                    <p>Landmark: {{ad.landmark}}</p>
+                    <p>City: {{ad.city}}</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        {% endfor %}
+
+
+
+
+    </div>
+</div>
+
+{% endblock body_block %}
